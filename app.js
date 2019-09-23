@@ -21,7 +21,7 @@ app.get('/wikipedia', function(req, res) {
         img: '',
         paragragh: ''
       };
-
+ 
       var $ = cheerio.load(html);
       $('#content').filter(function() {
         wiki_data.title = $(this).find('h1').text();

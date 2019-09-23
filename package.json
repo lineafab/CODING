@@ -10,5 +10,5 @@
         "express": "latest",
         "request": "latest",
         "cheerio": "latest"
-    }
+    } 
 }
