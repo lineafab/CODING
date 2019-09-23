@@ -21,7 +21,7 @@ app.get('/wikipedia', function(req, res) {
         img: '',
         paragragh: ''
       };
- 
+
       var $ = cheerio.load(html);
       $('#content').filter(function() {
         wiki_data.title = $(this).find('h1').text();
@@ -57,8 +57,8 @@ app.get('/imdb', function(req, res) {
 
       res.send(imdb_data);
 
-      fs.writeFile('imdb_output.js',"var imdb_output = [" + imdb_data + "]", function(error){
-        console.log("file is writting successfully!")
+      fs.writeFile('imdb_output.js',"var imdb_output = [" + imdb_data + "]" , function(error){
+        console.log("file is writting successfully!");
       });
     }
   });
