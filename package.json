@@ -1,0 +1,14 @@
+{
+    "name": "lineas-scraper",
+    "version": "0.0.1",
+    "homepage": "https://github.com/lineafab/CODING",
+    "description": "scraping",
+    "author": "Linea",
+    "main": "app.js",
+    "dependencies": {
+        "nodemon": "latest",
+        "express": "latest",
+        "request": "latest",
+        "cheerio": "latest"
+    }
+}
