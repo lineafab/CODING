@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- head section -->
   <meta charset="utf-8">
-  <script type="text/javascript" src="imdb_output.js"></script>
-  <script type="text/javascript">
-    function load_imdb_images() {
-      var div = document.getElementById('data');
-      for(var i = 0; i < imdb_output.length; i++) {
-        var img = "<img class='tile' src='" + imdb_output[i] + "'>";
-        div.innerHTML = div.innerHTML + img;
-        }
-      }
-  </script>
+
+  <title>[your title here]</title>
+
+  <link href="index.css" rel="stylesheet" />
+
 </head>
-<body onload="load_imdb_images()">
-  <div id="data">
-  </div>
+<body>
+  <!-- body -->
+
+
+  <!-- NO HTML LAYOUT BELOW THIS POINT! -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+
+<!-- the body ends here -->
 </body>
 </html>
+<!-- end of the html document, nothing to see here, move along -->

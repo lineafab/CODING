@@ -1,7 +1,7 @@
 # Things GitHub should ignore
 # dependencies
 node_modules
-_dist
+archive
 # logs
 npm-debug.log
 # Webstorm
@@ -29,4 +29,3 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .Rproj.user
- 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <script type="text/javascript" src="comments.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      border: 0;
+    }
+
+body {
+  background-color: #000;
+
+}
+
+
+    #output p {
+      position: absolute;
+      font-size: 50px;
+      padding: .5em;
+      /* border-bottom: 2px dashed red; */
+      text-align: center;
+      z-index: 100;
+      background-color: rgba(255, 255, 255);
+      color: black;
+
+    }
+    #output p:last-child { border: none }
+
+    .clip{
+      z-index: 0;
+      position: absolute;
+
+    }
+    span {
+      /* background: black; */
+      color: white;
+      font-style: italic;
+      background-color: black;
+    }
+
+    .maincontainer{
+      width: 100vw;
+      height: auto;
+        }
+
+    #thevideo {
+      width: 100vw;
+      }
+
+      #output-original{
+        position: absolute;
+        z-index: 1;
+      }
+
+      #output-beautified{
+        position: absolute;
+        z-index: 2;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="maincontainer">
+  <div class="clip">
+      <video id="thevideo" width="" height="auto" autoplay loop >
+          <source src="images/GertaThunberg.mp4" type="video/mp4">
+      <video>
+  </div>
+</div>
+
+
+<div class="secondcontainer">
+  <div id="output-original"></div>
+  <div id="output-beautified"></div>
+</div>
+
+
+
+
+    <script type="text/javascript">
+
+    newArray = [];
+
+    gretaArray.forEach(function(sentence){
+      var stripped = sentence.replace(/[gG]re(t||tt)a/g, '<span>Linea</span>');
+      stripped = stripped.replace(/[hH][oO][wW] [dD][aA][rR][eE] [yY][oO][uU]/g, '<span>Keep going</span>');
+      stripped = stripped.replace(/[hH][oO][wW] [dD][aA][rR][eE] [uU]/g, '<span>Keep going girl</span>');
+      stripped = stripped.replace(/(school)/g, '<span>the white house</span>');
+      stripped = stripped.replace(/[gG][iI][rR][lL]/g, '<span> sweetheart</span>');
+
+      newArray.push(stripped);
+    });
+
+
+
+      var output_div1 = document.getElementById( "output-original" );
+      var output_div2 = document.getElementById( "output-beautified" );
+      // var output_txt;
+
+      gretaArray.forEach(function(sentence){
+        var pdiv = document.createElement('p');
+        pdiv.innerHTML = sentence;
+        output_div1.append(pdiv);
+      });
+
+      newArray.forEach(function(sentence){
+        var pdiv = document.createElement('p');
+        pdiv.innerHTML = sentence;
+        output_div2.append(pdiv);
+      });
+
+      var comment_index = 0;
+      function updateIndex( ) {
+          comment_index++;
+          if ( comment_index >= gretaArray.length )
+            comment_index = 0;
+      }
+
+      // function displayNextComment( ) {
+      //   output_txt = '<p>' + newArray[ comment_index ] + '</p>';
+      //   updateIndex( );
+      //
+      //   // output_txt += '<p>' + newArray[ comment_index ] + '</p>';
+      //   // updateIndex( );
+      //   //
+      //   // output_txt += '<p>' + gretaArray[ comment_index ] + '</p>';
+      //   // updateIndex( );
+      //   //
+      //   // output_txt += '<p>' + gretaArray[ comment_index ] + '</p>';
+      //   // updateIndex( );
+      //
+      //   output_div.innerHTML = output_txt;
+      //
+      //   setTimeout( displayNextComment, 5000 );
+      // }
+
+      // displayNextComment( );
+    </script>
+
+</body>
+
+</html>

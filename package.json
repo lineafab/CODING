@@ -1,14 +1,14 @@
 {
-    "name": "lineas-scraper",
-    "version": "0.0.1",
-    "homepage": "https://github.com/lineafab/CODING",
-    "description": "scraping",
-    "author": "Linea",
-    "main": "app.js",
-    "dependencies": {
-        "nodemon": "latest",
-        "express": "latest",
-        "request": "latest",
-        "cheerio": "latest"
-    } 
+  "name": "youtubecommentscraperpuppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.20.0"
+  }
 }
