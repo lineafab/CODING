@@ -1,5 +1,0 @@
-var gretaArray = [ "Can’t wait for her to be in a South Park episode","It sounds like she’s reading lines in drama class.","Greta insults crowd
-
-Crowd: applause","1% who cares what she’s talking about 
-
-99% here for memes","Is she crying or just like speaking, I can’t tell the difference","She’s the type of girl to remind the teacher to check the homework","Oh dear, I don’t mean to offend but she really does look like Goliad","if she’s that bothered she can just go back to school like no ones stopping her","Why does she sound like she’s perpetually out of breath?","Why does she look like the little creature from Harry Potter Movies","How is she yelling and whispering at the same time","Her over acting actually ruined the speech...","I don’t care how sad and angry she is, her emotions are based on that piece of paper she’s reading from. Which she DIDNT WRITE!!!","She looks like a really young grandma." ];

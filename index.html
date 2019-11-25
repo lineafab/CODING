@@ -1,23 +1,196 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-  <!-- head section -->
   <meta charset="utf-8">
+  <script type="text/javascript" src="comments.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      border: 0;
+    }
 
-  <title>[your title here]</title>
+@font-face {
+  font-family: MarrSans;
+  src: url(MarrSans-Bold.ttf);
+}
+body {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+}
 
-  <link href="index.css" rel="stylesheet" />
+.secondcontainer{
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
 
+#output h1 {
+  position: relative;
+  font-size: 70px;
+  padding: 1em;
+  /* border-bottom: 2px dashed red; */
+  text-align: center;
+  z-index: 33;
+  color: white;
+  opacity: 1;
+  font-family: MarrSans;
+  font-weight: bold;
+  animation-name: example2;
+  animation-duration: 18s;
+  -webkit-transform: skew(10deg,10deg); /* Safari prior 9.0 */
+  transform: skew(10deg,10deg);
+}
+
+    #output p {
+      position: relative;
+      font-size: 70px;
+      padding: 3em;
+      /* border-bottom: 2px dashed red; */
+      text-align: center;
+      z-index: 33;
+      color: white;
+      opacity: 1;
+      font-family: MarrSans;
+      font-weight: bold;
+      animation-name: example;
+      animation-duration: 17s;
+      -webkit-transform: skew(20deg,10deg); /* Safari prior 9.0 */
+      transform: skew(20deg,10deg);
+
+    }
+
+@keyframes example {
+    0%  {left:-800px; top:600px;}
+   100% {left:900px; top:-600px;}
+} */
+
+
+@keyframes example2 {
+    0%  {left:10px; top:-900px;}
+   100% {left:-20px; top:600px;}
+}
+
+
+
+
+    .clip{
+      z-index: -1111;
+      position: absolute;
+
+    }
+    span {
+      position: relative;
+      /* background: black; */
+      color: black;
+      font-style: italic;
+      /* background-color: white; */
+      cursor: pointer;
+    }
+
+    span:hover{
+      color: rgba(255,255,255,0);
+      cursor: pointer;
+    }
+    span:hover:before {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+        color: yellow;
+
+      content: attr(data-original);
+      display: inline-block;
+    }
+    .maincontainer{
+      width: 100vw;
+      height: auto;
+      position: fixed;
+      z-index: 1;
+        }
+
+    #thevideo {
+      width: 100vw;
+      }
+
+      .baggrund{
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.5;
+        background-color: black;
+        position: fixed;
+        z-index: 22;
+      }
+
+  </style>
 </head>
+
 <body>
-  <!-- body -->
+
+<div class="baggrund"></div>
+
+<div class="maincontainer">
+  <div class="clip">
+      <video id="thevideo" width="" height="auto" autoplay loop >
+          <source src="images/GertaThunberg.mp4" type="video/mp4">
+      <video>
+  </div>
+</div>
 
 
-  <!-- NO HTML LAYOUT BELOW THIS POINT! -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="index.js"></script>
+<div class="secondcontainer">
+<div id="output"></div>
+</div>
 
-<!-- the body ends here -->
+
+
+    <script type="text/javascript">
+
+    newArray = [];
+
+    gretaArray.forEach(function(sentence){
+      var stripped = sentence.replace(/[gG]re(t||tt)a/g, '<span data-original="Greta">Linea</span>');
+      stripped = stripped.replace(/[hH][oO][wW] [dD][aA][rR][eE] [yY][oO][uU]/g, '<span data-original="How dare you">Keep going</span>');
+      stripped = stripped.replace(/[hH][oO][wW] [dD][aA][rR][eE] [uU]/g, '<span data-original="How dare u">Keep going girl</span>');
+      stripped = stripped.replace(/(school)/g, '<span data-original="school">Shouse</span>');
+      stripped = stripped.replace(/[gG][iI][rR][lL]/g, '<span data-original="girl"> sweetheart</span>');
+      newArray.push(stripped);
+    });
+
+      var output_div = document.getElementById( "output" );
+      var output_txt;
+
+      var comment_index = 0;
+      function updateIndex( ) {
+          comment_index++;
+          if ( comment_index >= gretaArray.length )
+            comment_index = 0;
+      }
+
+      function displayNextComment( ) {
+        output_txt = '<p>' + newArray[ comment_index ] + '</p>';
+        updateIndex( );
+
+        output_txt += '<h1>' + newArray[ comment_index ] + '</h1>';
+        updateIndex( );
+
+        // output_txt += '<p>' + gretaArray[ comment_index ] + '</p>';
+        // updateIndex( );
+        //
+        // output_txt += '<p>' + gretaArray[ comment_index ] + '</p>';
+        // updateIndex( );
+
+        output_div.innerHTML = output_txt;
+
+        setTimeout( displayNextComment, 8000 );
+      }
+
+      displayNextComment( );
+    </script>
+
 </body>
+
 </html>
-<!-- end of the html document, nothing to see here, move along -->
